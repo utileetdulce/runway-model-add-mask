@@ -11,7 +11,7 @@ def setup(opts):
 @runway.command(name='generate',
                 inputs={ 'image': image(channels=3), 'mask': image(channels=4)  },
                 outputs={ 'masked_image': image(channels=4) },
-                description='Generates a red square when the input text input is "red".')
+                description='Add an alpha mask to an image')
 def generate(model, args):
     output_image = model.run_on_input(args['image'], args['mask'])
     return {
